@@ -1,0 +1,11 @@
+
+
+
+<form #update = "ngForm" *ngFor="let item of items" (ngSubmit) = "onSubmit(update)" ngNativeValidate> 
+    <input class="hide"  type="number"  name="id"  value="{{item.id}}" ngModel [(ngModel)]="item.id" >
+    <input type="text" name="name" placeholder="{{item.name}}" ngModel required #first="ngModel">
+    <input type = "text" name = "gender" placeholder = "{{item.gender}}" ngModel required> 
+    <input type="number" name="class" placeholder="{{item.class}}" ngModel required>
+    <input type="submit"   value="update" >
+</form>
+

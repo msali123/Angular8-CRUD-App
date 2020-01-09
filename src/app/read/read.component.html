@@ -1,0 +1,46 @@
+
+
+<!-- Table created to bind the data from object to display it. -->
+<table id="mytable" class="display">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Functions</th>
+    <th>abc</th>
+  </tr>
+</thead>
+<tbody>
+  <!-- Using an ngFor Loop to get the items out of the items objects -->
+  <tr *ngFor="let item of items">
+    <td >{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.gender}}</td>
+    <td>{{item.class}}</td>
+    <!-- Here is an Update button that uses routing with parameters. In this we will be routing to the Update component along wwith the id. -->
+    <td> <input type="button" name="Update" [routerLink]="['/update/', item.id]" routerLinkActive="active" value="Update" onsubmit="gotoUpdate()" ></td>
+    <!-- Here is an Delete button that calls a function on submit and passes id parameters. -->
+    <td> <input type="submit" name="Update"  name="Delete" value="Delete" (click)="gotoDelete(item.id)" ></td>
+  </tr>
+</tbody>
+</table>
+
+<!-- 
+<table id="mytable">
+  <thead>
+    <tr>
+      <th>abc</th>
+      <th>zyx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ads</td>
+      <td>asd</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<router-outlet></router-outlet>
